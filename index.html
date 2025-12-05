@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 性格测试</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 首页/介绍页面 -->
+        <section id="intro-page" class="page active">
+            <div class="intro-content">
+                <h1 class="title">MBTI 性格测试</h1>
+                <p class="subtitle">探索真实的自己</p>
+                <div class="mbti-info">
+                    <p>MBTI（迈尔斯-布里格斯类型指标）是一种广泛使用的人格类型评估工具，帮助你了解自己的性格偏好和行为模式。</p>
+                    <p>通过回答以下问题，你将获得属于你的MBTI类型，包括：</p>
+                    <div class="mbti-dimensions">
+                        <div class="dimension">
+                            <span class="dimension-label">外向 (E)</span>
+                            <span class="dimension-arrow">→</span>
+                            <span class="dimension-label">内向 (I)</span>
+                        </div>
+                        <div class="dimension">
+                            <span class="dimension-label">感觉 (S)</span>
+                            <span class="dimension-arrow">→</span>
+                            <span class="dimension-label">直觉 (N)</span>
+                        </div>
+                        <div class="dimension">
+                            <span class="dimension-label">思考 (T)</span>
+                            <span class="dimension-arrow">→</span>
+                            <span class="dimension-label">情感 (F)</span>
+                        </div>
+                        <div class="dimension">
+                            <span class="dimension-label">判断 (J)</span>
+                            <span class="dimension-arrow">→</span>
+                            <span class="dimension-label">感知 (P)</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="start-test" class="btn btn-primary">开始测试</button>
+            </div>
+        </section>
+
+        <!-- 测试题页面 -->
+        <section id="test-page" class="page">
+            <div class="test-header">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress" class="progress-fill"></div>
+                    </div>
+                    <div id="question-counter" class="question-counter">问题 1 / 20</div>
+                </div>
+            </div>
+            <div class="test-content">
+                <h2 id="question-text" class="question-text">问题将在这里显示</h2>
+                <div class="options">
+                    <button class="option-btn" data-score="1">非常不符合</button>
+                    <button class="option-btn" data-score="2">比较不符合</button>
+                    <button class="option-btn" data-score="3">中立</button>
+                    <button class="option-btn" data-score="4">比较符合</button>
+                    <button class="option-btn" data-score="5">非常符合</button>
+                </div>
+            </div>
+            <div class="test-footer">
+                <button id="prev-btn" class="btn btn-secondary" disabled>上一题</button>
+                <button id="next-btn" class="btn btn-primary">下一题</button>
+            </div>
+        </section>
+
+        <!-- 结果展示页面 -->
+        <section id="result-page" class="page">
+            <div class="result-content">
+                <h1 class="result-title">你的MBTI类型是</h1>
+                <div id="mbti-type" class="mbti-type">ISTJ</div>
+                <div id="personality-description" class="personality-description">
+                    <!-- 性格描述将在这里显示 -->
+                </div>
+                <div class="personality-details">
+                    <h3>你的性格维度</h3>
+                    <div class="dimensions-result">
+                        <div class="dimension-result">
+                            <span class="dimension-name">态度倾向：</span>
+                            <div class="dimension-details">
+                                <span id="attitude-result" class="dimension-value">外向 (E)</span>
+                                <span id="attitude-score" class="dimension-score">E:0 / I:0</span>
+                            </div>
+                        </div>
+                        <div class="dimension-result">
+                            <span class="dimension-name">认知方式：</span>
+                            <div class="dimension-details">
+                                <span id="perception-result" class="dimension-value">感觉 (S)</span>
+                                <span id="perception-score" class="dimension-score">S:0 / N:0</span>
+                            </div>
+                        </div>
+                        <div class="dimension-result">
+                            <span class="dimension-name">判断方式：</span>
+                            <div class="dimension-details">
+                                <span id="judgment-result" class="dimension-value">思考 (T)</span>
+                                <span id="judgment-score" class="dimension-score">T:0 / F:0</span>
+                            </div>
+                        </div>
+                        <div class="dimension-result">
+                            <span class="dimension-name">生活方式：</span>
+                            <div class="dimension-details">
+                                <span id="lifestyle-result" class="dimension-value">判断 (J)</span>
+                                <span id="lifestyle-score" class="dimension-score">J:0 / P:0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="restart-test" class="btn btn-primary">重新测试</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
